@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Premium Medical Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- FontAwesome for neon icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Floating neon icons -->
+<div class="floating-icons">
+  <i class="fas fa-heartbeat"></i>
+  <i class="fas fa-dna"></i>
+  <i class="fas fa-stethoscope"></i>
+  <i class="fas fa-lungs"></i>
+</div>
+
+<div class="header">
+  <h1>Ultra Premium Medical Dashboard</h1>
+  <p>Advanced Clinical Assessment & Disease Risk Simulator</p>
+</div>
+
+<div class="navbar">
+  <button class="tab-btn active" data-tab="health">Health</button>
+  <button class="tab-btn" data-tab="bmi">BMI</button>
+  <button class="tab-btn" data-tab="stress">Stress</button>
+  <button class="tab-btn" data-tab="vitals">Vitals</button>
+  <button class="tab-btn" data-tab="disease">Disease Risk</button>
+</div>
+
+<div class="container">
+
+  <!-- Health Section -->
+  <section id="health" class="tab active">
+    <h2>🩺 General Health Assessment</h2>
+    <form id="healthForm">
+      <div class="question">
+        <label>Exercise Frequency</label>
+        <select id="exercise">
+          <option value="5">Daily</option>
+          <option value="4">3–5x weekly</option>
+          <option value="3">1–2x weekly</option>
+          <option value="2">Rare</option>
+          <option value="1">Never</option>
+        </select>
+      </div>
+      <div class="question">
+        <label>Diet Quality</label>
+        <select id="diet">
+          <option value="5">Excellent</option>
+          <option value="4">Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Very Poor</option>
+        </select>
+      </div>
+      <div class="question">
+        <label>Sleep Hours</label>
+        <select id="sleep">
+          <option value="5">7–9 hours</option>
+          <option value="4">6–7 hours</option>
+          <option value="3">5–6 hours</option>
+          <option value="2">Under 5 hours</option>
+          <option value="1">Very Disturbed</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">Generate Health Score</button>
+    </form>
+    <div id="healthResult" class="result hidden">
+      <h3>Health Assessment Score</h3>
+      <div class="progress"><div id="healthBar"></div></div>
+      <p id="healthText"></p>
+    </div>
+  </section>
+
+  <!-- BMI Section -->
+  <section id="bmi" class="tab">
+    <h2>⚖️ BMI Calculator</h2>
+    <input id="height" type="number" placeholder="Height (cm)">
+    <input id="weight" type="number" placeholder="Weight (kg)">
+    <button class="btn" onclick="calcBMI()">Calculate BMI</button>
+    <div id="bmiResult" class="result hidden">
+      <h3>BMI Result</h3>
+      <p><strong>BMI:</strong> <span id="bmiValue"></span></p>
+      <p id="bmiStatus"></p>
+    </div>
+  </section>
+
+  <!-- Stress Section -->
+  <section id="stress" class="tab">
+    <h2>🧠 Stress Analyzer</h2>
+    <select id="stressSelect">
+      <option value="1">Low</option>
+      <option value="2">Mild</option>
+      <option value="3">High</option>
+      <option value="4">Severe</option>
+    </select>
+    <button class="btn" onclick="analyzeStress()">Analyze Stress</button>
+    <div id="stressResult" class="result hidden">
+      <h3>Stress Level</h3>
+      <p id="stressText"></p>
+    </div>
+  </section>
+
+  <!-- Vitals Section -->
+  <section id="vitals" class="tab">
+    <h2>💓 Vitals & ECG Simulation</h2>
+    <input id="bp" type="text" placeholder="Blood Pressure (e.g., 120/80)">
+    <input id="hr" type="number" placeholder="Heart Rate (bpm)">
+    <input id="temp" type="number" placeholder="Temperature (°C)">
+    <button class="btn" onclick="showVitalsChart()">Show Vitals & ECG</button>
+    <div class="result chart-container hidden" id="vitalsChartContainer">
+      <canvas id="vitalsChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Disease Risk Section -->
+  <section id="disease" class="tab">
+    <h2>🧬 Disease Risk Simulation</h2>
+    <input id="age" type="number" placeholder="Age">
+    <select id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input id="cholesterol" type="number" placeholder="Cholesterol (mg/dL)">
+    <input id="bloodSugar" type="number" placeholder="Blood Sugar (mg/dL)">
+    <select id="smoking">
+      <option value="0">Non-smoker</option>
+      <option value="1">Smoker</option>
+    </select>
+    <select id="alcohol">
+      <option value="0">No Alcohol</option>
+      <option value="1">Occasional</option>
+      <option value="2">Regular</option>
+    </select>
+    <select id="family">
+      <option value="0">No Family History</option>
+      <option value="1">Positive Family History</option>
+    </select>
+    <button class="btn" onclick="calculateDiseaseRisk()">Calculate Risk</button>
+    <div class="result chart-container hidden" id="diseaseChartContainer">
+      <canvas id="diseaseChart"></canvas>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

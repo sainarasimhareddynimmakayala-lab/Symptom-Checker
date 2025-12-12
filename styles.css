@@ -1,0 +1,31 @@
+/* ------------------------ PREMIUM DARK FUTURISTIC DASHBOARD ------------------------ */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Inter",sans-serif;}
+body{background:#0a0f1e;color:#f0f0f0;padding:30px;overflow-x:hidden;}
+.header{text-align:center;margin-bottom:30px;}
+.header h1{font-size:38px;font-weight:900;background:linear-gradient(135deg,#00f6ff,#005aff);-webkit-background-clip:text;color:transparent;}
+.header p{color:#aaa;font-size:15px;margin-top:5px;}
+.navbar{display:flex;justify-content:center;gap:15px;margin-bottom:30px;}
+.tab-btn{padding:12px 28px;border-radius:12px;background:#111827;border:2px solid #333;cursor:pointer;font-weight:700;color:#00c6ff;transition:0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+.tab-btn:hover{background:#1a2236;}
+.tab-btn.active{background:linear-gradient(135deg,#00f6ff,#005aff);color:#fff;border:none;box-shadow:0 6px 20px rgba(0,102,255,0.6);}
+.container{max-width:1000px;margin:auto;background:rgba(20,25,40,0.85);backdrop-filter:blur(20px);border-radius:25px;padding:35px;box-shadow:0 25px 45px rgba(0,0,0,0.5);}
+h2{font-size:28px;font-weight:800;color:#00f6ff;margin-bottom:18px;}
+input,select{width:100%;padding:14px;margin-top:6px;border-radius:12px;border:1.5px solid #444;background:#111827;color:#f0f0f0;font-size:15px;transition:0.3s;}
+input:focus,select:focus{outline:none;border-color:#00f6ff;box-shadow:0 0 0 4px rgba(0,198,255,0.2);}
+.btn{width:100%;padding:16px;margin-top:12px;border:none;border-radius:14px;font-size:16px;font-weight:700;background:linear-gradient(135deg,#00f6ff,#005aff);color:white;cursor:pointer;box-shadow:0 6px 14px rgba(0,102,255,0.4);transition:0.3s;}
+.btn:hover{transform:scale(1.03);box-shadow:0 10px 25px rgba(0,102,255,0.6);}
+.result{margin-top:20px;padding:25px;background:rgba(30,35,55,0.85);border-radius:20px;border:1px solid #222;box-shadow:0 10px 25px rgba(0,0,0,0.6);}
+.result h3{font-size:20px;font-weight:800;color:#00f6ff;margin-bottom:10px;}
+.progress{width:100%;height:18px;background:#222;border-radius:30px;overflow:hidden;margin:16px 0;}
+#healthBar{height:100%;width:0%;background:linear-gradient(135deg,#00f6ff,#005aff);transition:width 1s;border-radius:30px;}
+.tab{display:none;}
+.tab.active{display:block;}
+.hidden{display:none;}
+.question label{font-weight:600;color:#ccc;}
+.chart-container{margin-top:25px;}
+/* Neon floating icons */
+.floating-icons i{position:fixed;font-size:35px;color:#00f6ff;animation:float 6s ease-in-out infinite;opacity:0.7;}
+.floating-icons i:nth-child(2){top:150px;left:80px;color:#ff4d4d;animation-duration:5s;}
+.floating-icons i:nth-child(3){top:400px;left:200px;color:#ffcc00;animation-duration:7s;}
+.floating-icons i:nth-child(4){top:600px;left:600px;color:#66ff66;animation-duration:6.5s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
